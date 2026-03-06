@@ -47,9 +47,17 @@ interface Ride {
 // --- Components ---
 
 const VersionBanner = () => (
-  <div className="bg-zinc-900 text-white py-1 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
-    <Info className="w-3 h-3" />
-    <span>RideFlow Production Build — v{APP_VERSION}</span>
+  <div className="bg-zinc-900 text-white py-1.5 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 border-b border-white/5">
+    <div className="flex items-center gap-1.5">
+      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+      <span className="text-zinc-400">System Status:</span>
+      <span className="text-emerald-400">Operational</span>
+    </div>
+    <div className="w-px h-3 bg-zinc-700 mx-2"></div>
+    <div className="flex items-center gap-2">
+      <Info className="w-3 h-3 text-zinc-500" />
+      <span>RideFlow v{APP_VERSION}</span>
+    </div>
   </div>
 );
 
@@ -60,11 +68,14 @@ const Navbar = ({ user, onLogout, onNavigate }: { user: UserData | null, onLogou
     <nav className="bg-white border-b border-zinc-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => onNavigate('home')}>
-            <div className="bg-zinc-900 p-2 rounded-lg">
+          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onNavigate('home')}>
+            <div className="bg-zinc-900 p-2 rounded-lg group-hover:scale-110 transition-transform">
               <Car className="text-white w-6 h-6" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-zinc-900">RideFlow</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold tracking-tight text-zinc-900 leading-none">RideFlow</span>
+              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mt-1">v{APP_VERSION}</span>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
