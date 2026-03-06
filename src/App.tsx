@@ -47,7 +47,7 @@ interface Ride {
 // --- Components ---
 
 const VersionBanner = () => (
-  <div className="bg-zinc-900 text-white py-1.5 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 border-b border-white/5">
+  <div className="bg-zinc-900 text-white py-1.5 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 border-b border-white/5 sticky top-0 z-[60]">
     <div className="flex items-center gap-1.5">
       <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
       <span className="text-zinc-400">System Status:</span>
@@ -65,7 +65,7 @@ const Navbar = ({ user, onLogout, onNavigate }: { user: UserData | null, onLogou
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-zinc-100 sticky top-0 z-50">
+    <nav className="bg-white border-b border-zinc-100 sticky top-[33px] z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => onNavigate('home')}>
