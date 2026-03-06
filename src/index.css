@@ -3,10 +3,21 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
 }
 
 @layer base {
   body {
-    @apply antialiased;
+    @apply antialiased bg-gray-50 text-gray-800;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    @apply font-semibold text-gray-900;
+  }
+
+  a {
+    @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
   }
 }
