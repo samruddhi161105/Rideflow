@@ -1,5 +1,5 @@
 {
-  "name": "RideFlow - Professional Ride Booking System",
-  "description": "A comprehensive ride-booking platform with real-time tracking, driver management, and professional system architecture documentation.",
+  "name": "RideFlow - Online Ride Booking Application",
+  "description": "A ride booking web application designed with modern system architecture, real-time ride tracking, driver management, and REST API integration.",
   "requestFramePermissions": ["geolocation"]
 }
