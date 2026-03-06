@@ -1,0 +1,5 @@
+{
+  "name": "RideFlow - Professional Ride Booking System",
+  "description": "A comprehensive ride-booking platform with real-time tracking, driver management, and professional system architecture documentation.",
+  "requestFramePermissions": ["geolocation"]
+}
