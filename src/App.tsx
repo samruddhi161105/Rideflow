@@ -18,9 +18,13 @@ import {
   AlertCircle,
   LogOut,
   History,
-  LayoutDashboard
+  LayoutDashboard,
+  Info
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+// --- Global Constants ---
+declare const APP_VERSION: string;
 
 // --- Types ---
 interface UserData {
@@ -41,6 +45,13 @@ interface Ride {
 }
 
 // --- Components ---
+
+const VersionBanner = () => (
+  <div className="bg-zinc-900 text-white py-1 px-4 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+    <Info className="w-3 h-3" />
+    <span>RideFlow Production Build — v{APP_VERSION}</span>
+  </div>
+);
 
 const Navbar = ({ user, onLogout, onNavigate }: { user: UserData | null, onLogout: () => void, onNavigate: (page: string) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -536,6 +547,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-zinc-900 selection:bg-zinc-900 selection:text-white">
+      <VersionBanner />
       <Navbar user={user} onLogout={handleLogout} onNavigate={setCurrentPage} />
       
       <main>
